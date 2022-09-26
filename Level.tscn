@@ -1,0 +1,291 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Assets/Gerry.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Gerry.gd" type="Script" id=2]
+[ext_resource path="res://Assets/new_env.tres" type="Environment" id=3]
+[ext_resource path="res://Textures/TactilePaving002_2K_NormalGL.jpg" type="Texture" id=4]
+[ext_resource path="res://Assets/blocksLibrary.tres" type="MeshLibrary" id=5]
+[ext_resource path="res://Textures/TactilePaving002_2K_Roughness.jpg" type="Texture" id=6]
+[ext_resource path="res://Assets/coin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/enemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Fonts/cnr.otf" type="DynamicFontData" id=9]
+[ext_resource path="res://Sprites/hud_coin.png" type="Texture" id=10]
+
+[sub_resource type="BoxShape" id=3]
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.780392, 0.909804, 0.309804, 1 )
+roughness_texture = ExtResource( 6 )
+normal_enabled = true
+normal_scale = -5.0
+normal_texture = ExtResource( 4 )
+uv1_triplanar = true
+
+[sub_resource type="DynamicFont" id=6]
+size = 50
+font_data = ExtResource( 9 )
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -8.809, 3.87699, -8.8705 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 270 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "enemy1anim"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2.2, 3, 3.8, 5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 2.24675, 3.87699, -8.8705 ), Vector3( -8.809, 3.87699, -8.8705 ), Vector3( -8.809, 3.87699, 5.55931 ), Vector3( -15.7015, 3.87699, 5.55931 ), Vector3( -8.40331, 3.87699, 5.55931 ), Vector3( -8.40331, 3.87699, -8.99594 ), Vector3( 2.28856, 3.87699, -8.99594 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2.2, 3, 3.8, 5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 270 ), Vector3( 0, 0, 570 ), Vector3( 0, 0, 660 ), Vector3( 0, 0, 570 ), Vector3( 0, 0, 270 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -15.5907, 3.87699, -13.2957 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "enemy2animation"
+length = 7.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 2.5, 3.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -15.5907, 3.87699, -13.2957 ), Vector3( -15.5907, 3.87699, -25.674 ), Vector3( -33.535, 3.87699, -25.674 ), Vector3( -15.5505, 3.87699, -25.674 ), Vector3( -15.5505, 3.87699, -5.16778 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 15.4916, 3.87699, -24.2176 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "enemy3animation"
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.7, 4, 6, 7.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -10.1528, 3.87699, -24.2176 ), Vector3( 15.4916, 3.87699, -24.2176 ), Vector3( 15.4916, 3.87699, 22.4148 ), Vector3( 15.5694, 3.87699, -24.0035 ), Vector3( 1.33997, 3.87699, -24.0624 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 8.84473, 3.87699, 15.2524 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "enemy4animation"
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 3, 4, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -26.6433, 3.87699, 15.2524 ), Vector3( 8.84473, 3.87699, 15.2524 ), Vector3( 8.84473, 3.87699, -1.47493 ), Vector3( 8.84473, 3.87699, 15.5775 ), Vector3( -26.1562, 3.87699, 15.5775 ) ]
+}
+
+[node name="Level" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.957239 )
+
+[node name="Floor" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor"]
+transform = Transform( 30, 0, 0, 0, 2, 0, 0, 0, 30, -8.391, 1.24, -1.965 )
+shape = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Floor"]
+transform = Transform( 30, 0, 0, 0, 2, 0, 0, 0, 30, -8.40869, 1.05925, -1.68037 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="Gerry" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.3, -2.51312 )
+script = ExtResource( 2 )
+
+[node name="cameraTarget" type="Spatial" parent="Gerry"]
+transform = Transform( 1, 0, 0, 0, 0.996877, 0.0789637, 0, -0.0789637, 0.996877, 0, 4.71419, 14.4642 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.000824749, 0.999955, 0.00949365, -0.0865433, -0.00952941, 0.996203, 0.996248, 5.60898e-09, 0.0865472, 4.31319, 23.3784, 2.64472 )
+light_color = Color( 1, 0.826936, 0.413086, 1 )
+shadow_enabled = true
+
+[node name="InterpolatedCamera" type="InterpolatedCamera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.838775, 0.544478, 0, -0.544478, 0.838775, 0, 16.6672, 29.5309 )
+environment = ExtResource( 3 )
+target = NodePath("../Gerry/cameraTarget")
+speed = 3.0
+enabled = true
+
+[node name="Coins" type="Spatial" parent="."]
+
+[node name="coin" parent="Coins" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43486, 3.80202, 0 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Control"]
+
+[node name="HudCoin" type="Sprite" parent="Control"]
+position = Vector2( 1102, 26 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="Control"]
+margin_left = 1127.0
+margin_top = 4.0
+margin_right = 1299.0
+margin_bottom = 74.0
+custom_fonts/font = SubResource( 6 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform( 7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 1.15, 0 )
+mesh_library = ExtResource( 5 )
+cell_size = Vector3( 0.5, 0.5, 0.5 )
+data = {
+"cells": PoolIntArray( 3, 0, 0, 5, 0, 1, 65525, 0, 1, 65530, 0, 0, 65534, 0, 0, 5, 1, 1, 65525, 1, 1, 65527, 1, 0, 65530, 1, 0, 65534, 1, 0, 0, 2, 0, 5, 2, 1, 65525, 2, 1, 65527, 2, 0, 65530, 2, 0, 65533, 2, 0, 65534, 2, 0, 65535, 2, 0, 3, 3, 0, 5, 3, 1, 65525, 3, 1, 65527, 3, 0, 3, 4, 0, 5, 4, 1, 65525, 4, 1, 65527, 4, 0, 1, 5, 0, 2, 5, 0, 3, 5, 0, 5, 5, 1, 65525, 5, 1, 65527, 5, 0, 65528, 5, 0, 65529, 5, 0, 65530, 5, 0, 65533, 5, 0, 65534, 5, 0, 65535, 5, 0, 5, 6, 1, 65525, 6, 1, 0, 7, 1, 1, 7, 1, 2, 7, 1, 3, 7, 1, 4, 7, 1, 5, 7, 1, 65525, 7, 1, 65526, 7, 1, 65527, 7, 1, 65528, 7, 1, 65529, 7, 1, 65530, 7, 1, 65531, 7, 1, 65532, 7, 1, 65533, 7, 1, 65534, 7, 1, 65535, 7, 1, 0, 65527, 1, 1, 65527, 1, 2, 65527, 1, 3, 65527, 1, 4, 65527, 1, 5, 65527, 1, 65525, 65527, 1, 65526, 65527, 1, 65527, 65527, 1, 65528, 65527, 1, 65529, 65527, 1, 65530, 65527, 1, 65531, 65527, 1, 65532, 65527, 1, 65533, 65527, 1, 65534, 65527, 1, 65535, 65527, 1, 5, 65528, 1, 65525, 65528, 1, 5, 65529, 1, 65525, 65529, 1, 65527, 65529, 0, 65528, 65529, 0, 65529, 65529, 0, 65530, 65529, 0, 1, 65530, 0, 2, 65530, 0, 3, 65530, 0, 5, 65530, 1, 65525, 65530, 1, 65527, 65530, 0, 65530, 65530, 0, 65534, 65530, 0, 3, 65531, 0, 5, 65531, 1, 65525, 65531, 1, 65527, 65531, 0, 65534, 65531, 0, 3, 65532, 0, 5, 65532, 1, 65525, 65532, 1, 65532, 65532, 0, 65533, 65532, 0, 65534, 65532, 0, 65535, 65532, 0, 1, 65533, 0, 5, 65533, 1, 65525, 65533, 1, 65530, 65533, 0, 65532, 65533, 0, 1, 65534, 0, 2, 65534, 0, 3, 65534, 0, 5, 65534, 1, 65525, 65534, 1, 65527, 65534, 0, 65530, 65534, 0, 65532, 65534, 0, 1, 65535, 0, 3, 65535, 0, 5, 65535, 1, 65525, 65535, 1, 65527, 65535, 0, 65529, 65535, 0, 65530, 65535, 0, 65534, 65535, 0 )
+}
+__meta__ = {
+"_editor_clip_": 0
+}
+
+[node name="enemy1" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, 0, 1, -8.809, 3.87699, -8.8705 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy1"]
+autoplay = "enemy1anim"
+anims/RESET = SubResource( 7 )
+anims/enemy1anim = SubResource( 8 )
+
+[node name="enemy2" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, 0, 1, -15.5907, 3.87699, -13.2957 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy2"]
+autoplay = "enemy2animation"
+anims/RESET = SubResource( 9 )
+anims/enemy2animation = SubResource( 10 )
+
+[node name="enemy3" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, 0, 1, 15.4916, 3.87699, -24.2176 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy3"]
+autoplay = "enemy3animation"
+anims/RESET = SubResource( 11 )
+anims/enemy3animation = SubResource( 12 )
+
+[node name="enemy4" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, 0, 1, 8.84473, 3.87699, 15.2524 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy4"]
+autoplay = "enemy4animation"
+anims/RESET = SubResource( 13 )
+anims/enemy4animation = SubResource( 14 )
+
+[connection signal="body_entered" from="enemy1" to="Gerry" method="_on_enemy1_body_entered"]
+[connection signal="body_entered" from="enemy2" to="Gerry" method="_on_enemy1_body_entered"]
+[connection signal="body_entered" from="enemy3" to="Gerry" method="_on_enemy1_body_entered"]
+[connection signal="body_entered" from="enemy4" to="Gerry" method="_on_enemy1_body_entered"]
